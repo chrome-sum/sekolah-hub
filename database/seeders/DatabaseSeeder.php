@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(\App\Modules\Gallery\database\seeders\GallerySeeder::class);
         $this->call(\App\Modules\Contact\database\seeders\ContactSeeder::class);
         $this->call(\App\Modules\PPDB\database\seeders\PPDBSeeder::class);
+        $this->call(\App\Modules\Theme\database\seeders\ThemeSeeder::class);
     }
 }

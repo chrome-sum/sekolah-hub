@@ -40,4 +40,14 @@ interface PPDBServiceInterface
      * Export registrations for an admission track to Excel.
      */
     public function exportRegistrations(AdmissionTrack $track);
+
+    /**
+     * Get the currently active Academic Year.
+     */
+    public function getActiveAcademicYear(): ?AcademicYear;
+
+    /**
+     * Get active admission tracks for a given academic year.
+     */
+    public function getActiveTracks(int $academicYearId): \Illuminate\Support\Collection;
 }

@@ -61,6 +61,9 @@
                         </x-nav-link>
                     @endcan
                     @can('settings.manage')
+                        <x-nav-link :href="route('admin.themes.index')" :active="request()->routeIs('admin.themes.*')">
+                            {{ __('Tema') }}
+                        </x-nav-link>
                         <x-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
                             {{ __('Pengaturan') }}
                         </x-nav-link>

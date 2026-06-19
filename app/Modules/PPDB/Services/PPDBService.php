@@ -56,4 +56,16 @@ class PPDBService implements PPDBServiceInterface
     {
         return $this->exportRegistrationsAction->execute($track);
     }
+
+    public function getActiveAcademicYear(): ?AcademicYear
+    {
+        return AcademicYear::where('is_active', true)->first();
+    }
+
+    public function getActiveTracks(int $academicYearId): \Illuminate\Support\Collection
+    {
+        return AdmissionTrack::where('academic_year_id', $academicYearId)
+            ->where('is_active', true)
+            ->get();
+    }
 }

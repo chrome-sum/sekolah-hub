@@ -10,7 +10,10 @@ class ThemeServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        //
+        $this->app->bind(
+            \App\Modules\Theme\Contracts\ThemeServiceInterface::class,
+            \App\Modules\Theme\Services\ThemeService::class
+        );
     }
 
     public function boot(): void
@@ -19,5 +22,6 @@ class ThemeServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
         $this->loadViewsFrom(__DIR__ . '/../views', 'theme');
+
     }
 }

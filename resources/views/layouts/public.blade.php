@@ -16,9 +16,15 @@
     </head>
     <body class="font-sans antialiased text-gray-900 bg-gray-50/50 min-h-screen flex flex-col justify-between">
         @php
-            $cmsService = app(\App\Modules\CMS\Contracts\CMSServiceInterface::class);
-            $headerMenu = $cmsService->getMenuByLocation('header-menu');
-            $footerMenu = $cmsService->getMenuByLocation('footer-menu');
+            $headerMenu = null;
+            $footerMenu = null;
+            try {
+                $cmsService = app(\App\Modules\CMS\Contracts\CMSServiceInterface::class);
+                $headerMenu = $cmsService->getMenuByLocation('header-menu');
+                $footerMenu = $cmsService->getMenuByLocation('footer-menu');
+            } catch (\Exception $e) {
+                // Fail-safe fallback when tables do not exist
+            }
         @endphp
 
         <!-- Navbar Header -->
