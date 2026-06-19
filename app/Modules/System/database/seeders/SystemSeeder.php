@@ -81,6 +81,10 @@ class SystemSeeder extends Seeder
                 'value' => 'school-classic',
                 'description' => 'The currently active public frontend website theme.',
             ],
+            'theme.primary_color' => [
+                'value' => '#3B82F6',
+                'description' => 'Warna aksen utama sistem (format hex, e.g. #3B82F6).',
+            ],
             'cloudflare.turnstile.site_key' => [
                 'value' => '0x4AAAAAADnUDmc-9DJ4l5fi',
                 'description' => 'Cloudflare Turnstile site key for SPAM protection.',

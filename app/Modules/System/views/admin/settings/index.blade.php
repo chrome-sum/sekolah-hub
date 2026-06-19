@@ -28,13 +28,18 @@
                                     </label>
                                     
                                     @if($setting->key === 'theme.active')
-                                        <select name="settings[{{ $setting->key }}]" class="select select-bordered w-full">
+                                        <select name="settings[{{ $setting->key }}]" class="select select-bordered w-full text-sm">
                                             <option value="school-classic" {{ $setting->value === 'school-classic' ? 'selected' : '' }}>School Classic</option>
                                         </select>
+                                    @elseif($setting->key === 'theme.primary_color')
+                                        <div class="flex gap-3 items-center" x-data="{ color: '{{ $setting->value ?: '#3B82F6' }}' }">
+                                            <input type="color" x-model="color" class="w-10 h-10 border border-gray-200 rounded-lg cursor-pointer shrink-0" />
+                                            <input type="text" name="settings[{{ $setting->key }}]" x-model="color" class="input input-bordered flex-1 text-sm font-mono" placeholder="#3B82F6" />
+                                        </div>
                                     @elseif($setting->key === 'cloudflare.turnstile.secret_key')
-                                        <input type="password" name="settings[{{ $setting->key }}]" value="{{ $setting->value }}" class="input input-bordered w-full" placeholder="Turnstile secret key">
+                                        <input type="password" name="settings[{{ $setting->key }}]" value="{{ $setting->value }}" class="input input-bordered w-full text-sm" placeholder="Turnstile secret key">
                                     @else
-                                        <input type="text" name="settings[{{ $setting->key }}]" value="{{ $setting->value }}" class="input input-bordered w-full">
+                                        <input type="text" name="settings[{{ $setting->key }}]" value="{{ $setting->value }}" class="input input-bordered w-full text-sm">
                                     @endif
                                 </div>
                             @endforeach

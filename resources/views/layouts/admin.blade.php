@@ -1,3 +1,11 @@
+@php
+    try {
+        $systemService = app(\App\Modules\System\Contracts\SystemServiceInterface::class);
+        $primaryColor = $systemService->getSetting('theme.primary_color', '#3B82F6');
+    } catch (\Exception $e) {
+        $primaryColor = '#3B82F6';
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,14 +16,20 @@
     <title>{{ config('app.name', 'Sekolah Hub') }} - Admin Panel</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Scripts & Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <x-rich-text::styles theme="daisyui" />
+
+    <style>
+        :root {
+            --primary: {{ $primaryColor }};
+        }
+    </style>
 </head>
-<body class="font-sans antialiased text-body-dark bg-app-bg">
+<body class="font-sans antialiased text-body-dark bg-app-bg transition-colors duration-200">
     <div x-data="{ 
         sidebarCollapsed: localStorage.getItem('sidebarCollapsed') === 'true', 
         mobileOpen: false,

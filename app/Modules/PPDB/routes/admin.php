@@ -9,6 +9,10 @@ use App\Modules\PPDB\Http\Controllers\Admin\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web', 'auth'])->prefix('admin/ppdb')->name('admin.ppdb.')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.ppdb.registrations.index');
+    });
+
     // Academic Years
     Route::resource('academic-years', AcademicYearController::class)->except(['show']);
 

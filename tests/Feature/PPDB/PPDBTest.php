@@ -56,6 +56,15 @@ class PPDBTest extends TestCase
     }
 
     /**
+     * Test redirecting the root /admin/ppdb path to the registrations index route.
+     */
+    public function test_ppdb_admin_root_redirects_to_registrations_index(): void
+    {
+        $response = $this->actingAs($this->superAdmin)->get('/admin/ppdb');
+        $response->assertRedirect(route('admin.ppdb.registrations.index'));
+    }
+
+    /**
      * Test Academic Year CRUD and active constraints.
      */
     public function test_academic_year_crud_and_activation_constraints(): void

@@ -15,9 +15,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                primary: 'var(--primary)',
                 'sidebar-bg': '#1E2A3B',
                 'sidebar-active': '#253347',
                 'sidebar-muted': '#94A3B8',
@@ -25,6 +26,11 @@ export default {
                 'border-light': '#E9ECEF',
                 'heading-dark': '#111827',
                 'body-dark': '#4B5563',
+            },
+            borderRadius: {
+                lg: 'var(--radius)',
+                md: 'calc(var(--radius) - 2px)',
+                sm: 'calc(var(--radius) - 4px)',
             },
         },
     },
