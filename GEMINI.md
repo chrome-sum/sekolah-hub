@@ -205,10 +205,17 @@ Tujuan utama adalah menyelesaikan task dengan risiko regresi minimum.
 
 ---
 
-Interpretasi Source of Truth:
+## Interpretasi Source of Truth:
 
 - PRD menjelaskan apa yang dibangun.
 - ERD menjelaskan bagaimana data disimpan.
 - ADR menjelaskan mengapa keputusan arsitektur diambil.
 - GEMINI.md menjelaskan bagaimana agent bekerja.
 - .agent/rules menjelaskan aturan implementasi rinci.
+
+## Skills
+
+- load `.agents/skills` whenever you creating, editing, or updating design/frontend code.
+- make sure skill is compatible with Laravel framework.
+- review rules in `.agents/rules` before making any changes.
+- review `.agents/rules/frontend.md` before making any changes in design/frontend code.

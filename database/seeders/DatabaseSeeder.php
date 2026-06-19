@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(\App\Modules\System\database\seeders\SystemSeeder::class);
         $this->call(\App\Modules\CMS\database\seeders\CMSSeeder::class);
         $this->call(\App\Modules\Gallery\database\seeders\GallerySeeder::class);
+        $this->call(\App\Modules\Contact\database\seeders\ContactSeeder::class);
     }
 }

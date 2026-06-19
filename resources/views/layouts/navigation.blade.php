@@ -34,6 +34,11 @@
                             {{ __('Galeri') }}
                         </x-nav-link>
                     @endcan
+                    @can('contact.manage')
+                        <x-nav-link :href="route('admin.contacts.index')" :active="request()->routeIs('admin.contacts.*')">
+                            {{ __('Pesan Masuk') }}
+                        </x-nav-link>
+                    @endcan
                     @can('users.manage')
                         <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
                             {{ __('Pengguna') }}
