@@ -150,6 +150,7 @@ Urutan:
 2. architecture.md
 3. database.md
 4. agent-behavior.md
+5. frontend.md
 
 Kemudian load hanya rules modul yang relevan:
 

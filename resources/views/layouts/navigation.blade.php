@@ -29,6 +29,11 @@
                             {{ __('Menu') }}
                         </x-nav-link>
                     @endcan
+                    @can('gallery.manage')
+                        <x-nav-link :href="route('admin.gallery.index')" :active="request()->routeIs('admin.gallery.*')">
+                            {{ __('Galeri') }}
+                        </x-nav-link>
+                    @endcan
                     @can('users.manage')
                         <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
                             {{ __('Pengguna') }}

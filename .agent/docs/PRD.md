@@ -4,7 +4,7 @@
 
 ### Versi
 
-v1.0 (Final)
+v1.2
 
 ### Status
 
