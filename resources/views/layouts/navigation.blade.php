@@ -39,6 +39,17 @@
                             {{ __('Pesan Masuk') }}
                         </x-nav-link>
                     @endcan
+                    @can('ppdb.manage')
+                        <x-nav-link :href="route('admin.ppdb.registrations.index')" :active="request()->routeIs('admin.ppdb.registrations.*')">
+                            {{ __('Pendaftar PPDB') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.ppdb.tracks.index')" :active="request()->routeIs('admin.ppdb.tracks.*')">
+                            {{ __('Jalur PPDB') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.ppdb.academic-years.index')" :active="request()->routeIs('admin.ppdb.academic-years.*')">
+                            {{ __('Tahun Ajaran PPDB') }}
+                        </x-nav-link>
+                    @endcan
                     @can('users.manage')
                         <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
                             {{ __('Pengguna') }}
