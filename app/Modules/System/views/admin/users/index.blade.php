@@ -50,10 +50,10 @@
                                         <td class="text-right flex items-center justify-end space-x-2">
                                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-ghost btn-xs text-blue-600">Edit</a>
                                             @if(auth()->id() !== $user->id)
-                                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus pengguna ini?">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus pengguna ini?')" class="btn btn-ghost btn-xs text-rose-600">Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600">Hapus</button>
                                                 </form>
                                             @endif
                                         </td>

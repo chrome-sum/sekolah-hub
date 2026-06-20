@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <form action="{{ route('admin.posts.store') }}" method="POST" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <form action="{{ route('admin.posts.store') }}" method="POST" class="grid grid-cols-1 lg:grid-cols-3 gap-6" x-data="{ loading: false }" @submit="loading = true">
             @csrf
 
             <!-- Main Content Editor -->
@@ -105,7 +105,10 @@
                     </div>
 
                     <div class="flex items-center gap-2 pt-2">
-                        <button type="submit" class="btn btn-primary flex-1 text-white text-xs font-semibold rounded-lg shadow-sm">Simpan</button>
+                        <button type="submit" :disabled="loading" class="btn btn-primary flex-1 text-white text-xs font-semibold rounded-lg shadow-sm flex items-center justify-center gap-1.5">
+                            <span x-show="loading" class="loading loading-spinner loading-xs" x-cloak></span>
+                            <span>Simpan</span>
+                        </button>
                         <a href="{{ route('admin.posts.index') }}" class="btn btn-ghost text-gray-500 border border-gray-200 hover:bg-gray-50 text-xs font-semibold rounded-lg">Batal</a>
                     </div>
                 </div>

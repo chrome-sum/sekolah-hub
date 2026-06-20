@@ -87,10 +87,10 @@
                                         <td class="py-4 text-right">
                                             <div class="flex items-center justify-end space-x-2">
                                                 <a href="{{ route('admin.gallery.edit', $album->id) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                <form action="{{ route('admin.gallery.destroy', $album->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.gallery.destroy', $album->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus album galeri ini beserta pengaitan fotonya?">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus album galeri ini beserta pengaitan fotonya?')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
                                                 </form>
                                             </div>
                                         </td>

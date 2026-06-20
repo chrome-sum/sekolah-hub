@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <form action="{{ route('admin.pages.update', $page->id) }}" method="POST" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <form action="{{ route('admin.pages.update', $page->id) }}" method="POST" class="grid grid-cols-1 lg:grid-cols-3 gap-6" x-data="{ loading: false }" @submit="loading = true">
             @csrf
             @method('PUT')
 
@@ -112,7 +112,10 @@
                     </div>
 
                     <div class="flex items-center gap-2 pt-2">
-                        <button type="submit" class="btn btn-primary flex-1 text-white text-xs font-semibold rounded-lg shadow-sm">Perbarui</button>
+                        <button type="submit" :disabled="loading" class="btn btn-primary flex-1 text-white text-xs font-semibold rounded-lg shadow-sm flex items-center justify-center gap-1.5">
+                            <span x-show="loading" class="loading loading-spinner loading-xs" x-cloak></span>
+                            <span>Perbarui</span>
+                        </button>
                         <a href="{{ route('admin.pages.index') }}" class="btn btn-ghost text-gray-500 border border-gray-200 hover:bg-gray-50 text-xs font-semibold rounded-lg">Batal</a>
                     </div>
                 </div>

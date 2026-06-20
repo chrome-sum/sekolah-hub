@@ -71,10 +71,10 @@
                                 <td class="py-4.5 px-6 text-right">
                                     <div class="flex items-center justify-end gap-2.5">
                                         <a href="{{ route('admin.pages.edit', $page->id) }}" class="inline-flex items-center justify-center text-xs font-semibold text-indigo-600 hover:text-indigo-900 bg-indigo-50/50 hover:bg-indigo-50 px-2.5 py-1.5 rounded-md transition duration-150">Edit</a>
-                                        <form action="{{ route('admin.pages.destroy', $page->id) }}" method="POST" class="inline">
+                                        <form action="{{ route('admin.pages.destroy', $page->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus halaman ini? (Halaman anak akan kehilangan referensi induknya)">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus halaman ini? (Halaman anak akan kehilangan referensi induknya)')" class="inline-flex items-center justify-center text-xs font-semibold text-rose-600 hover:text-rose-900 bg-rose-50/50 hover:bg-rose-50 px-2.5 py-1.5 rounded-md transition duration-150">Hapus</button>
+                                            <button type="submit" class="inline-flex items-center justify-center text-xs font-semibold text-rose-600 hover:text-rose-900 bg-rose-50/50 hover:bg-rose-50 px-2.5 py-1.5 rounded-md transition duration-150">Hapus</button>
                                         </form>
                                     </div>
                                 </td>

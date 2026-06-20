@@ -61,10 +61,10 @@
                                             <div class="flex items-center justify-end space-x-2">
                                                 <a href="{{ route('admin.ppdb.tracks.form-fields.index', $track->id) }}" class="btn btn-ghost btn-xs text-emerald-600 hover:text-emerald-900">Form Builder</a>
                                                 <a href="{{ route('admin.ppdb.tracks.edit', $track->id) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                <form action="{{ route('admin.ppdb.tracks.destroy', $track->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.ppdb.tracks.destroy', $track->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus jalur pendaftaran ini? Semua field form dan pendaftaran terkait akan ikut terhapus!">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus jalur pendaftaran ini? Semua field form dan pendaftaran terkait akan ikut terhapus!')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
                                                 </form>
                                             </div>
                                         </td>

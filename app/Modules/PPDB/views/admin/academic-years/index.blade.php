@@ -64,10 +64,10 @@
                                         <td class="py-4 text-right">
                                             <div class="flex items-center justify-end space-x-2">
                                                 <a href="{{ route('admin.ppdb.academic-years.edit', $year->id) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                <form action="{{ route('admin.ppdb.academic-years.destroy', $year->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.ppdb.academic-years.destroy', $year->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus tahun ajaran ini?">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus tahun ajaran ini?')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900" {{ $year->is_active ? 'disabled' : '' }}>Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900" {{ $year->is_active ? 'disabled' : '' }}>Hapus</button>
                                                 </form>
                                             </div>
                                         </td>

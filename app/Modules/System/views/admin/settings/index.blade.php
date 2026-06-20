@@ -17,7 +17,7 @@
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border border-gray-100">
                 <div class="p-6 text-gray-900">
-                    <form action="{{ route('admin.settings.update') }}" method="POST">
+                    <form action="{{ route('admin.settings.update') }}" method="POST" x-data="{ loading: false }" @submit="loading = true">
                         @csrf
                         
                         <div class="grid grid-cols-1 gap-6 max-w-xl">
@@ -46,7 +46,8 @@
                         </div>
 
                         <div class="mt-8 flex justify-start">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" :disabled="loading" class="btn btn-primary flex items-center gap-1.5">
+                                <span x-show="loading" class="loading loading-spinner loading-xs" x-cloak></span>
                                 Simpan Pengaturan
                             </button>
                         </div>

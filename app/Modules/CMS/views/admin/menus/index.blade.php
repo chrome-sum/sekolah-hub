@@ -69,10 +69,10 @@
                                             <div class="flex items-center justify-end space-x-2">
                                                 <a href="{{ route('admin.menus.builder', $menu->id) }}" class="btn btn-sm btn-primary btn-outline btn-xs">Kelola Struktur</a>
                                                 <a href="{{ route('admin.menus.edit', $menu->id) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit Info</a>
-                                                <form action="{{ route('admin.menus.destroy', $menu->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.menus.destroy', $menu->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus menu ini? Semua item menu di dalamnya juga akan terhapus.">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus menu ini? Semua item menu di dalamnya juga akan terhapus.')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
                                                 </form>
                                             </div>
                                         </td>

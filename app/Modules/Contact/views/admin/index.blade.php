@@ -80,10 +80,10 @@
                                 <td class="py-4.5 px-6 text-right">
                                     <div class="flex items-center justify-end gap-2.5">
                                         <a href="{{ route('admin.contacts.show', $message->id) }}" class="inline-flex items-center justify-center text-xs font-semibold text-indigo-600 hover:text-indigo-900 bg-indigo-50/50 hover:bg-indigo-50 px-2.5 py-1.5 rounded-md transition duration-150">Lihat</a>
-                                        <form action="{{ route('admin.contacts.destroy', $message->id) }}" method="POST" class="inline">
+                                        <form action="{{ route('admin.contacts.destroy', $message->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus pesan ini?">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus pesan ini?')" class="inline-flex items-center justify-center text-xs font-semibold text-rose-600 hover:text-rose-900 bg-rose-50/50 hover:bg-rose-50 px-2.5 py-1.5 rounded-md transition duration-150">Hapus</button>
+                                            <button type="submit" class="inline-flex items-center justify-center text-xs font-semibold text-rose-600 hover:text-rose-900 bg-rose-50/50 hover:bg-rose-50 px-2.5 py-1.5 rounded-md transition duration-150">Hapus</button>
                                         </form>
                                     </div>
                                 </td>

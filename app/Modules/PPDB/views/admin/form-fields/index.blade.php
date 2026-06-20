@@ -131,10 +131,10 @@
 
                                             <a href="{{ route('admin.ppdb.tracks.form-fields.edit', [$track->id, $field->id]) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit</a>
                                             
-                                            <form action="{{ route('admin.ppdb.tracks.form-fields.destroy', [$track->id, $field->id]) }}" method="POST" class="inline">
+                                            <form action="{{ route('admin.ppdb.tracks.form-fields.destroy', [$track->id, $field->id]) }}" method="POST" class="inline" data-confirm="Hapus field form ini? Data nilai pendaftar yang sudah tersimpan untuk field ini akan hilang!">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" onclick="return confirm('Hapus field form ini? Data nilai pendaftar yang sudah tersimpan untuk field ini akan hilang!')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
+                                                <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
                                             </form>
                                         </div>
                                     </td>

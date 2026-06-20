@@ -68,10 +68,10 @@
                                         <td class="py-4 text-right">
                                             <div class="flex items-center justify-end space-x-2">
                                                 <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-ghost btn-xs text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" class="inline">
+                                                <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" class="inline" data-confirm="Apakah Anda yakin ingin menghapus kategori ini? (Kategori anak akan kehilangan parent-nya)">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Hapus kategori ini? (Kategori anak akan kehilangan parent-nya)')" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
+                                                    <button type="submit" class="btn btn-ghost btn-xs text-rose-600 hover:text-rose-900">Hapus</button>
                                                 </form>
                                             </div>
                                         </td>
