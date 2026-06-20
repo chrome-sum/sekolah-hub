@@ -27,6 +27,9 @@
         :root {
             --primary: {{ $primaryColor }};
         }
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-body-dark bg-app-bg transition-colors duration-200">

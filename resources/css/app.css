@@ -90,3 +90,7 @@ body {
     background-color: transparent !important;
     color: var(--primary) !important;
 }
+
+[x-cloak] {
+    display: none !important;
+}
